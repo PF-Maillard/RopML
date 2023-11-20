@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: angrop
+Version: 9.1.10913
+Summary: The rop chain builder based off of angr
+Home-page: UNKNOWN
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: progressbar
+Requires-Dist: tqdm
+Requires-Dist: angr (==9.1.10913)
+
+UNKNOWN
+
+
