@@ -6,19 +6,14 @@ from Modules.DataAnalyser import AnalyseDataClassifier
 from Modules.DataTests import FilesROC, GadgetsROC, GadgetsROCSize, ConfusionMatrix, GadgetsTSNE, GadgetsTreeExtractor
 from Modules.DataTool import SyntaxicML, SymbolicAngropML,SymbolicAngrop
 
-#ListNameFileToAnalyze = ["notepad.exe", "dpkg", "HelpPane.exe", "libsystemd-shared-245.so", "explorer.exe" ] 
-#ListNameFileToAnalyze = ["shell32.dll", "vmms.exe", "MRT.exe"] 
-#ListNameFileToAnalyze = ["shell32.dll"]
-ListNameFileToAnalyze = ["MRT.exe"]
-#ListNameFileToAnalyze = ["vmms.exe"] 
-#ListNameFileToAnalyze = ["notepad.exe"]
+ListNameFileToAnalyze = ["notepad.exe"]
 Coef = 0.01 #0.003
 Thread = 1
 FolderBinaryFile = "Data/Files/"
 FolderGadgets = "Data/Gadgets/"
 FolderClassifiers = "Data/Classifiers/"
 FolderFilesToTest = "Data/TestDataSet/"
-#FolderAnalyzedFiles= "Data/FilesToBeTested/"
+FolderAnalyzedFiles= "Data/FilesToBeTested/"
 NameFileToAnalyze= "notepad.exe"
 FolderAnalyzedFiles= "Data/Test/"
 
@@ -49,8 +44,7 @@ print("TOOL EXECUTION")
 print("     10- Analyse a file with syntaxic ML")
 print("     11- Analyse a file with Angrop ML")
 print("     12- Analyse a file with ML Classification")
-print("     13- Gadgets TSNE ???")
-print("     14- Export a Random Forest tree to verify it")
+print("     13- Export a Random Forest tree to verify it")
 print("---------------------------------------------")
 
 #Entry
@@ -71,7 +65,6 @@ if(A == "2"):
 
 if(A == "3"):
     print("DELETED")
-    #AnalyseDataRegressor(FolderGadgets,FolderClassifiers + "RopClassifier", FolderClassifiers + "RopEncoder")
 
 if(A == "4"):
     print(ClassifierName)
@@ -96,8 +89,6 @@ if(A == "9"):
             print(NameFileToAnalyze)
             print("ML ANGROP 0.003:")
             SymbolicAngropML(FolderAnalyzedFiles + NameFileToAnalyze, FolderClassifiers + ClassifierName , FolderClassifiers + VektorizerName, Thread, 0.003)
-            #print("ML ANGROP 0.33:")
-            #SymbolicAngropML(FolderAnalyzedFiles + NameFileToAnalyze, FolderClassifiers + ClassifierName , FolderClassifiers + VektorizerName, Thread, 0.33)
             print("Classical ANGROP:")
             SymbolicAngrop(FolderAnalyzedFiles + NameFileToAnalyze,Thread)
         except Exception as e:
@@ -111,11 +102,7 @@ if(A == "11"):
     SymbolicAngropML(FolderAnalyzedFiles + NameFileToAnalyze, FolderClassifiers + ClassifierName ,FolderClassifiers + VektorizerName, Thread, Coef)
 
 if(A == "12"):
-   #GadgetsClassification(FolderGadgets)
    print("DELETED")
 
 if(A == "13"):
-   GadgetsTSNE(FolderGadgets)
-
-if(A == "14"):
    GadgetsTreeExtractor(FolderGadgets)
